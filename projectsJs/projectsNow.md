@@ -395,8 +395,25 @@ document.getElementById('img2').addEventListener('click',function(e){
 ############### MOVING TOWARD ADVANCE PROJECTS ################
 ```javascript
 
+//how to remove any image
+
+//method 1
+
+document.querySelector('#images').addEventListener('click', function(e) {
+    console.log(e.target.parentNode);
+
+    let removeIt = e.target.parentNode;
+    removeIt.remove();
+});
+
+//method-2
 
 
+document.querySelector('#images').addEventListener('click', function(e) {
+    console.log(e.target.parentNode);
+    let removeIt=e.target.parentNode;
+    removeIt.parentNode.removeChild(removeIt);
+});
 
 
 
