@@ -233,8 +233,167 @@ function startGame(){
 }
 
 
+```
+
+## New Concepts : 
+//notes
+
+```Notes
 
 
+```
+## Project-5 :
+```javascript
+/*
+//approach1
+document.getElementById('img1').onclick=function(){
+    alert('You clicked on image 1');
+
+}
+
+*/
+/*
+//approach2
+document.getElementById('img1').addEventListener('click',function(){
+  alert('You clicked on image 1');
+
+},true);
+*/
+
+
+/*
+//attachEvent()
+document.getElementById('img1').attachEvent('onclick',function(){
+  alert('You clicked on image 1');
+});
+
+*/
+
+
+//jQuery-on event hota tha
+
+
+document.getElementById('img1').addEventListener('click',function(e){
+  console.log(e);
+
+},false);
+
+/*
+######### FOR INTERVIEW TOPICS TO LEARN ##########
+1.type of Event 
+2.timestamp of Event
+3.default prevented
+4.target
+5.toElement
+6.srcElement
+7.currTarget
+8.client Position => clientX,clientY..
+9.screenX ,screenY
+10.Alt key
+12.ctrl key
+13.shift key
+14.key code
+15.keyboard speed
+
+
+*/
+
+
+/*
+
+########### Event Propagation ###########
+
+  ka matlab
+   hai jab kisi element par event
+  (jaise click) hota hai, to
+   browser decide karta hai ki
+   event kis order me chalega.
+
+$$$$$$$$$$$$  Iske 3 phases hote hain:$$$$$$$$$$$$$$$$$
+
+1> Capturing Phase (Top → Bottom)
+    Capturing me event upar se niche aata hai.
+    write true condtion so that event run like this
+
+         ex: 
+
+                 //parent
+                    document.getElementById('images').addEventListener('click',function(e){
+                          console.log("event 1");
+
+                    },true);
+                 //child 
+                    document.getElementById('img1').addEventListener('click',function(e){
+                         console.log("event 2");
+
+                    },true);
+
+     
+2> Target Phase (Jis element par click hua)
+
+
+3> Bubbling Phase (Bottom → Top)=>
+     1. Event Bubbling (Sabse common)
+
+           Event pehle target element
+             par chalta hai, phir uske
+             parent, phir grandparent,
+              aur aise hi upar tak jata hai.
+
+              example:
+              //parent
+                document.getElementById('images').addEventListener('click',function(e){
+                     console.log("event 1");
+
+                              },);
+              //child
+               document.getElementById('img1').addEventListener('click',function(e){
+                     console.log("event 2");
+
+                             },);
+
+*/
+
+//parent
+document.getElementById('images').addEventListener('click',function(e){
+  console.log("event 1");
+
+},false);
+//child
+document.getElementById('img1').addEventListener('click',function(e){
+  console.log("event 2");
+  e.stopPropagation(); 
+
+},false);
+
+
+//to stop Event Propagation we use 
+//e.stopPropagation(): this help to stop Event propagtion
+
+//e,defaultPrevented(): ye true ya false writen krega
+//Ye browser ke default behavior ko rok deta hai.
+//Page reload nahi hogi.
+/*
+preventDefault() → Browser ka default action rokna.
+defaultPrevented → Check karna ki default action roka gaya hai ya nahi.
+stopPropagation() → Event ko parent tak jaane se rokna.
+*/
+
+document.getElementById('img2').addEventListener('click',function(e){
+  e.preventDefault();
+  e.stopPropagation();
+  console.log("it is clicked");
+
+
+},false);
+
+
+```
+
+## project: 6
+
+############### MOVING TOWARD ADVANCE PROJECTS ################
+```javascript
 
 
 
