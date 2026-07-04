@@ -756,3 +756,54 @@ document.querySelector('#stop').addEventListener('click',stopChangingColor);
 
 
 ```
+
+## project 11:
+
+```HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="projects">
+        <div id="insert">
+            <div class="key">Press key to watch 
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    const insert=document.getElementById('insert');
+
+    window.addEventListener('keydown',(e)=>{
+        insert.innerHTML=`
+        <div class='color'>
+            <table border="">
+                <tr>
+                    <th>key</th>
+                    <th>keycode</th>
+                    <th>code</th>
+                </tr>
+                <tr>
+                    <td>${e.key===' '? 'space':e.key}</td>
+                    <td>${e.keyCode}</td>
+                    <td>${e.code}</td>
+                </tr>      
+       
+            </table>
+        </div>
+
+        `;
+
+    });
+
+</script>
+</html>
+
+```
