@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #Information{
+   height: 400px;
+   width: 400px;
+   border:solid ;
+    }
+</style>
+<body>
+    <h1>chai Aur code</h1>
+    <button id="stop">Stop</button>
+    <div id="Information">
+
+    </div>
+</body>
+<script>
+/*setTimeout:
+   inside this function
+   we pass two things:
+   1>handler: ek call back hai =>EK Function hai
+   2>time after which you want to perform task
+
+
+*/
+console.log("he ram how are you");//execute first
+
+//execute at 4rd
+setTimeout(function(){
+    console.log("heloo");
+},6000)
+
+console.log("he abhi kaise");//execute second
+
+
+
+
+//way 2
+//3rd
+const sayAshutosh=function(){
+      console.log("hi this side ashutosh");
+}
+
+setTimeout(sayAshutosh,3000);
+
+
+//changeText
+
+const changeText=function(){
+    document.querySelector('h1').innerHTML="this is best js course";
+    document.querySelector('#stop').innerHTML="Click To start";
+}
+
+const changeMe=setTimeout(changeText,6000);
+
+const info=function(){
+    document.querySelector('#Information')
+    .innerHTML="This Is chai aur code related content";
+}
+setTimeout(info,4000);
+
+//clearTimeout: used to remove setTimeOut
+
+document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(changeMe);
+    console.log("stopped");
+})
+
+
+
+
+
+
+</script>
+
+</html>

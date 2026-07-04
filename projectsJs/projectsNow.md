@@ -429,3 +429,195 @@ document.querySelector('#images').addEventListener('click', function(e) {
 
 
 ```
+
+
+## Theory 
+
+```Notes
+1> js is synchronous: mtb ek code execute fir uske bad ek code execute hoga
+2> single threaded lanmguage:
+ek hi thread pe sab kuch execute hoga
+slow performence
+js engine always with run time environment
+                 ||
+                \  /                 
+ye sab js ka default js behaviour he
+
+//execution context
+execute one line of code at atime
+
+
+call stack and memory heap
+
+###########Blocking vs Non Blocking code############
+1>Blocking Code:
+Blocking code wo hota hai jo agla code tab tak execute nahi hone deta jab tak current
+ task complete na ho.
+
+Block the flow of program
+Example:
+console.log("Start");
+
+for (let i = 0; i < 1000000000; i++) {
+    // Heavy Task
+}
+
+console.log("End");
+
+
+
+2>Non blocking code:
+Non-blocking code heavy ya time-taking task ko background me bhej deta hai aur baaki code turant execute karta hai.
+
+Example:
+Non-blocking code heavy ya time-taking task ko background me bhej deta hai aur baaki code turant execute karta hai.
+
+Start
+End
+(2 seconds later)
+Hello
+
+Flow of program maintain
+
+
+
+
+
+
+
+
+
+```
+
+## synchrounous:Synchronous (Line by Line Execution)
+
+Synchronous ka matlab hai:
+
+Ek kaam complete hoga, tabhi doosra kaam shuru hoga.
+
+JavaScript by default synchronous language hai.
+ex:
+```javascript
+console.log("A");
+console.log("B");
+console.log("C");
+```
+## asynchronous in js
+Step 3: Asynchronous
+
+Ab maan lo tumne online food order kiya.
+
+Tum order place karte ho.
+
+Restaurant bolta hai
+
+"20 minute lagenge."
+
+Kya tum 20 minute mobile ko dekhte rahoge?
+
+Nahi.
+
+Tum Instagram chalaoge.
+
+Friend se baat karoge.
+
+Movie dekhoge.
+
+20 minute baad food aa jayega.
+
+Ye hi asynchronous hai.
+
+ex:
+```javascript
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Hello");
+}, 3000);
+
+console.log("End");
+```
+## Project-7
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #Information{
+   height: 400px;
+   width: 400px;
+   border:solid ;
+    }
+</style>
+<body>
+    <h1>chai Aur code</h1>
+    <button id="stop">Stop</button>
+    <div id="Information">
+
+    </div>
+</body>
+<script>
+/*setTimeout:
+   inside this function
+   we pass two things:
+   1>handler: ek call back hai =>EK Function hai
+   2>time after which you want to perform task
+
+
+*/
+console.log("he ram how are you");//execute first
+
+//execute at 4rd
+setTimeout(function(){
+    console.log("heloo");
+},6000)
+
+console.log("he abhi kaise");//execute second
+
+
+
+
+//way 2
+//3rd
+const sayAshutosh=function(){
+      console.log("hi this side ashutosh");
+}
+
+setTimeout(sayAshutosh,3000);
+
+
+//changeText
+
+const changeText=function(){
+    document.querySelector('h1').innerHTML="this is best js course";
+    document.querySelector('#stop').innerHTML="Click To start";
+}
+
+const changeMe=setTimeout(changeText,6000);
+
+const info=function(){
+    document.querySelector('#Information')
+    .innerHTML="This Is chai aur code related content";
+}
+setTimeout(info,4000);
+
+//clearTimeout: used to remove setTimeOut
+
+document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(changeMe);
+    console.log("stopped");
+})
+
+
+
+
+
+
+</script>
+
+</html>
+```
