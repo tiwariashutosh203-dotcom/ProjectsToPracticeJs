@@ -975,3 +975,51 @@ data.followers
 
 
 ```
+
+
+## Notes:
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+</body>
+<script>
+/*
+1>Promises are the objects that represent the eventual
+completion or failure of an asynchronous opeartion 
+and its resulting value
+2>promise future me complete hota he 
+3>mobile dev me sound promise
+
+4>promises has 3 States
+    A>pending
+    b>fullfilled
+    c>rejected
+
+    //simple tutorial teach
+    fetch('https://something.png').then().catch().finally()
+
+
+
+    **> promises ek object he
+
+*/
+//promise creation
+
+const promiseOne=new Promise(function(resolve,reject){
+    //do async task
+    //DB call ,cryptography,network kam hm promise se krte he
+    
+})
+
+</script>
+</html>
+
+```
