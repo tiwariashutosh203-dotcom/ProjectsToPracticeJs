@@ -823,3 +823,155 @@ table,tree,etc
 
 
 ```
+## project 12
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    
+</body>
+
+<script>
+/*
+fetchApi() se phle 
+hmm XML http request bhejte the
+it si sold way but it is most powerful
+it is fully Ajex programming
+
+Ajex: Asynchronous js me programming ko Ajex kehte hai
+
+
+Step 1: API kya hoti hai?
+
+Maan lo tum YouTube se kisi channel ki information chahte ho.
+
+Tum directly YouTube ke database me nahi ja sakte.
+
+Tum request bhejte ho.
+
+Your Code
+     │
+     ▼
+API
+     │
+     ▼
+Database
+     │
+     ▼
+Data
+
+1> const requestUrl = "https://api.github.com/users/hiteshChoudhary";
+    This is variable hold data in the url in  json fromat
+
+
+ 2>const xhr = new XMLHttpRequest(); ek nya equest object
+
+ 3>
+ xhr.open('GET', requestUrl);
+abhi request bheji nhi gyee bas ready hui he
+
+4>xhr.send(); send request to internet
+Browser
+    │
+    ▼
+GitHub Server
+    │
+    ▼
+Response
+
+5>xhr.onreadystatechange = function () {
+
+}
+Server ko response aane me time lagta hai.
+
+Isliye browser wait nahi karta.
+
+Browser bolta hai
+onreadystatechange lagte hai
+
+6> console.log(xhr.readyState); ye btata he rquest kis state per he
+
+| State | Meaning              |
+| ----- | -------------------- |
+| 0     | Object create hua    |
+| 1     | open() ho gaya       |
+| 2     | Request send hui     |
+| 3     | Data aa raha hai     |
+| 4     | Data poora aa gaya ✅ |
+
+JSON.parse()
+
+Ye string ko object bana deta hai.
+*/
+
+//create object
+//xhr.open(method(GET,POST),Data as string)
+//xhr.send() to call open
+const requestUrl="https://api.github.com/users/hiteshChoudhary";
+const xhr=new XMLHttpRequest()
+xhr.open('GET',requestUrl);
+xhr.onreadystatechange=function(){
+    console.log(xhr.readyState);
+    if(xhr.readyState===4){
+        const data=JSON.parse(this.responseText);
+        
+        console.log(data.followers);
+    }
+        
+}
+
+xhr.send();
+
+/*
+Create XMLHttpRequest
+        │
+        ▼
+xhr.open()
+        │
+        ▼
+Request Ready
+        │
+        ▼
+xhr.send()
+        │
+        ▼
+GitHub Server
+        │
+        ▼
+Response
+        │
+        ▼
+onreadystatechange
+        │
+        ▼
+readyState == 4 ?
+        │
+     Yes
+        │
+        ▼
+responseText
+        │
+        ▼
+JSON.parse()
+        │
+        ▼
+JavaScript Object
+        │
+        ▼
+data.followers
+*/
+
+</script>
+
+</html>
+
+
+```
