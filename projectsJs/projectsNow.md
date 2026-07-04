@@ -807,3 +807,19 @@ document.querySelector('#stop').addEventListener('click',stopChangingColor);
 </html>
 
 ```
+
+## Notes :
+
+```Notes
+Api are used for communication bw difeerent data like communication bw bakend and frontend
+
+######## How to understand api ##########
+we can copy api from different sites
+try  to understand api using
+Api formator Like Json formator
+where we see api after formatting in different format.
+table,tree,etc
+  
+
+
+```
