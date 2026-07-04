@@ -671,3 +671,88 @@ document.querySelector('#stop')
 </html>
 
 ```
+
+## project 9:
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random color generate</title>
+</head>
+<style>
+    .startbtn{
+        padding:20px;
+        background-color: aquamarine;
+        border-radius: 15px;
+        width: 200px;
+        cursor: pointer;
+        border: none;
+        font-size: 30px;
+        font-weight: bold;
+
+    }
+    .stopbtn{
+             padding:20px;
+        background-color: rgb(255, 172, 127);
+        border-radius: 15px;
+        width: 200px;
+        cursor: pointer;
+        border: none;
+        font-size:30px;
+        font-weight: bold;
+    }
+    h1{
+        font-family: cursive;
+        font-size: 50px;
+        font-weight: bold;
+        color:blueviolet
+    }
+</style>
+<body>
+    <h1>Random Color Generator</h1>
+    <button id="start" class="startbtn">Start</button>
+    <button id="stop"class="stopbtn">stop</button>
+</body>
+<script>
+    //generate a random color
+    const randomColor=function(){
+        const hex="0123456789ABCDEF";
+        let color='#';
+        for(let i=0;i<6;i++){
+            color+=hex[Math.floor(Math.random()*16)];
+
+        }
+        return color;
+    }
+
+    console.log(randomColor());
+
+
+
+    //start changing color
+ let intervalId;
+    const startChangingColor=function(){
+        if(!intervalId){ 
+       intervalId= setInterval(ChangeBgColor,1000)
+    }
+        function ChangeBgColor(){ 
+        document.body.style.backgroundColor=randomColor();
+        }
+    };
+ document.querySelector('#start').addEventListener('click',startChangingColor);
+
+
+//stop changing color
+const stopChangingColor=function(){
+    clearInterval(intervalId);
+    intervalId=null;
+}
+document.querySelector('#stop').addEventListener('click',stopChangingColor);
+
+</script>
+</html>
+
+
+```
