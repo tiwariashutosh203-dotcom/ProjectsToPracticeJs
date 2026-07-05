@@ -1273,9 +1273,121 @@ fetch("https://api.example.com/users/999999")
 
 > **"Fetch API is a built-in JavaScript API used to make asynchronous HTTP requests. It returns a Promise and is commonly used to communicate with REST APIs in modern web applications."**
 
+## OOPS Concepts
+```Javascript
+//object
+
+
+const user={
+    username:"ashutosh",
+    logincaount:9,
+    signedIn:true,
+
+    getUserDetails:function(){
+        console.log("Got user Detail from Data Base");
+        console.log(`username: ${this.username}`);
+        console.log(this);//return window object   
+    }
+
+
+}
+
+console.log(user.username);
+console.log(user.logincaount);
+console.log(user.getUserDetails());
+
+
+
+function User(username,logincount,isLoggedIn){
+    this.username=username
+    this.logincount=logincount
+    this.isLoggedIn=isLoggedIn
+
+    this.greeting=function(){
+        console.log(`Welcome ${this.username}`);
+    }
+    return this
+}
+
+const userOne= new User("Ashu",12,true);
+console.log(userOne);
 
 
 
 
+```
+
+## project notes oops :
+
+```javascript
+//let myName="hitesh"
+//console.log(myName.trim().length);
+
+//console.log(myName.trueLength);
+let myHeros = ["thor","spiderman"]
+
+let heroPower = {
+    thor: "hammer",
+    spiderman:"sling",
+
+
+    getSpiderPower: function(){
+        console.log(`Spidy power is ${this.spiderman}`);
+    }
+}
+
+Object.prototype.hitesh= function(){
+    console.log(`hitesh is present in all objects`);
+
+}
+
+Array.prototype.heyHitesh= function(){
+    console.log("hitesh say hello");
+}
+//heroPower.hitesh();
+//myHeros.hitesh();
+//myHeros.heyHitesh();//run
+//heroPower.heyHitesh()//error  bottom->top->power not share
+
+
+
+//Inheritance
+
+const User= {
+    name:"chai",
+    email:"chai@google,com"
+}
+
+const Teacher= {
+    makeVideo:false
+}
+
+const TeachingSupport= {
+    isAvailable:false
+}
+
+const TASupport= {
+    makeAssignment:"js assignment ",
+    fullTime:true,
+    __proto__:TeachingSupport
+}
+Teacher.__proto__=User
+
+//modern syntax 
+
+Object.setPrototypeOf(TeachingSupport,Teacher)
+
+let anotherUsername= "chaiAurCode      "
+
+String.prototype.trueLength= function(){
+    console.log(` ${this}`);
+   // console.log(`${this.name}`);
+    console.log(`True length is: ${this.trim().length}`);
+
+}
+
+anotherUsername.trueLength();
+"hitesh".trueLength()
+"iceTea".trueLength();
 
 ```
