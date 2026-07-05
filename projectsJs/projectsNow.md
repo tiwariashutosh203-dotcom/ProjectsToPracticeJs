@@ -1176,3 +1176,106 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
 
 ```
+
+ ## NOTES: ++++++++++++++++
+```Notes
+1>Fetch Api :
+
+*>IT is included in Node js
+*>fetch network start fetching process at network
+*> return responcse
+
+Q1. What is a 404 Error?
+
+Answer:
+404 Not Found ka matlab hai ki client (browser) ne server ko request bheji, lekin server ko requested resource (page, image, API, file) nahi mila.
+
+. Is 404 a client-side error or server-side error?
+
+Answer:
+
+404 ek client error (4xx status code) hai.
+
+Reason:
+
+Browser ne request bhej di.
+Server chal raha hai.
+Lekin requested resource nahi mila.
+
+
+ex:
+
+fetch("https://api.example.com/users/999999")
+.then((response) => {
+    if (!response.ok) {
+        throw new Error("404 Not Found");
+    }
+    return response.json();
+})
+.then((data) => console.log(data))
+.catch((error) => console.log(error.message));
+
+## Fetch API – Interview & Industry Notes (10 Points)
+
+1. **`fetch()`** is a modern JavaScript API used to make **HTTP requests** to servers (GET, POST, PUT, DELETE, PATCH).
+
+2. It **returns a Promise**, so it is handled using `.then()/.catch()` or `async/await`.
+
+3. By default, `fetch()` sends a **GET** request.
+
+4. Common syntax:
+
+   ```javascript
+   fetch(url)
+     .then(response => response.json())
+     .then(data => console.log(data))
+     .catch(error => console.log(error));
+   ```
+
+5. **HTTP Methods:**
+
+   * GET → Fetch data
+   * POST → Create data
+   * PUT → Update entire resource
+   * PATCH → Update specific fields
+   * DELETE → Remove data
+
+6. **Industry Uses:**
+
+   * Calling REST APIs
+   * User Login & Authentication
+   * E-commerce (products, cart, orders)
+   * Weather, Maps, Payment APIs
+   * Chat and Social Media apps
+   * Dashboard and Analytics data
+
+7. `fetch()` **does not reject on HTTP errors** like **404** or **500**. Check `response.ok` or `response.status` manually.
+
+8. Common response methods:
+
+   * `response.json()`
+   * `response.text()`
+   * `response.blob()`
+   * `response.arrayBuffer()`
+
+9. **Headers** are used to send metadata such as:
+
+   ```javascript
+   headers: {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer TOKEN"
+   }
+   ```
+
+10. **Interview Tip:** Today, almost every React, Node.js, and Full Stack application uses `fetch()` (or libraries like Axios) to communicate with backend APIs.
+
+### One-line Interview Definition
+
+> **"Fetch API is a built-in JavaScript API used to make asynchronous HTTP requests. It returns a Promise and is commonly used to communicate with REST APIs in modern web applications."**
+
+
+
+
+
+
+```
